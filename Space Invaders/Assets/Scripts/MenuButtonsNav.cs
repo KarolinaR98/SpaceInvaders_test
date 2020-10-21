@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelSelectionScript : MonoBehaviour
+public class MenuButtonsNav : MonoBehaviour
 {
     public void LoadRoom(string levelName)
     {

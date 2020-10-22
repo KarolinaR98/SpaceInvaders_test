@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();   
     }
-    void Update()
+    void FixedUpdate()
     {
         Vector2 velocity = rb.velocity;
         velocity.y = speed;
@@ -18,6 +18,15 @@ public class Bullet : MonoBehaviour
 
         if (transform.position.y > 3.5)
         {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2")
+        {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }

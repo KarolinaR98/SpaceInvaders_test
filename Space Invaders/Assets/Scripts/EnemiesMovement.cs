@@ -8,13 +8,9 @@ public class EnemiesMovement : MonoBehaviour
     private float step = 0.1f;
     private float timeToMove = 0.8f;
     [SerializeField] private Transform enemies;
+   
     
-
-    void Start()
-    {
-        
-    }
-
+    
 
     void Update()
     {
@@ -36,23 +32,16 @@ public class EnemiesMovement : MonoBehaviour
                     timeToMove -= 0.05f;
                 }
 
+             
                 
                 timer = 0;
                 
             }
-                
-
-
-                
-                
+                         
             
         }
-            
-            
+
  
-        
-        
-        
               
         
     }

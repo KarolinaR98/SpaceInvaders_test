@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPlayer : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed= 10f;
     private Rigidbody2D rb;
@@ -12,6 +12,7 @@ public class BulletPlayer : MonoBehaviour
     }
     void FixedUpdate()
     {
+
         Vector2 velocity = rb.velocity;
         velocity.y = speed;
         rb.velocity = velocity;
@@ -26,7 +27,9 @@ public class BulletPlayer : MonoBehaviour
     {
         
         if(collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2")
+
         {
+           
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

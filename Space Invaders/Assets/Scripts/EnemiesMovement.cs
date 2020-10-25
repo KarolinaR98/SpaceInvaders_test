@@ -14,7 +14,11 @@ public class EnemiesMovement : MonoBehaviour
 
     void Update()
     {
-        Movement();
+        if (GameManager.playGame)
+        {
+            Movement();
+        }
+        
     }
 
     void Movement()

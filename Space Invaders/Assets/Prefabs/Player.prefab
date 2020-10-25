@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 703465606}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,3 +178,6 @@ MonoBehaviour:
   bulletTransform: {fileID: 482530343}
   bulletPrefab: {fileID: 174068750968348086, guid: ccfbd76efd4b5004eb6f5929be87ffed,
     type: 3}
+  points: 0
+  numOLives: 0
+  pointsText: {fileID: 0}

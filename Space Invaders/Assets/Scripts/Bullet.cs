@@ -6,9 +6,13 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed= 10f;
     private Rigidbody2D rb;
+    private GameObject player;
+   
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
+
     }
     void FixedUpdate()
     {
@@ -32,6 +36,14 @@ public class Bullet : MonoBehaviour
            
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            player.GetComponent<Player>().points++;
+
+
+        }
+
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
         }
 
     }

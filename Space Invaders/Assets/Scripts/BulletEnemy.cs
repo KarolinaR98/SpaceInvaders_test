@@ -24,15 +24,17 @@ public class BulletEnemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2")
+        if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Bullet")
         {
             Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), bullet.GetComponent<Collider2D>());
         }
 
         if(collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            GameManager.playGame = false;
+            collision.gameObject.GetComponent<Player>().numOLives--;
             Destroy(gameObject);
+            collision.gameObject.BroadcastMessage("CheckIfEndOfGame", SendMessageOptions.DontRequireReceiver);
         }
 
     

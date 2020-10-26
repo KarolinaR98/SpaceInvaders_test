@@ -8,6 +8,11 @@ public class MenuButtonsNav : MonoBehaviour
     public void LoadRoom(string levelName)
     {
         SceneManager.LoadScene(levelName);
+        if (levelName == "Game")
+        {
+            GameManager.playGame = true;
+        }
+        
     }
 
     public void QuitGame()

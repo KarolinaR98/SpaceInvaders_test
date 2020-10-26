@@ -8,6 +8,7 @@ public class Enemy2 : MonoBehaviour
     [SerializeField] private Transform bulletTransform;
     [SerializeField] private GameObject bulletPrefab;
     private float timer;
+    public float x = 7;
     private float timeForShot;
 
     void Start()
@@ -18,12 +19,15 @@ public class Enemy2 : MonoBehaviour
 
     void Update()
     {
-        //if (GameManager.playGame)
-        {
-            timeForShot = Random.Range(4, 7);
-            BulletGenerator(timeForShot);
 
+        if (GameManager.playGame)
+        {
+            timeForShot = Random.Range(x, 7);
+            BulletGenerator(timeForShot);
         }
+        
+
+
     }
 
 

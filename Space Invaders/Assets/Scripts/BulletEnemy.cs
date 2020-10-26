@@ -15,10 +15,12 @@ public class BulletEnemy : MonoBehaviour
 
         bullet.position += Vector3.up * (-speed);
 
-        if (transform.position.y <= (-3.8))
+        if (transform.position.y <= (-3.8) || GameManager.playGame == false)
         {
             Destroy(gameObject);
         }
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,7 +33,7 @@ public class BulletEnemy : MonoBehaviour
 
         if(collision.gameObject.tag == "Player")
         {
-            GameManager.playGame = false;
+            
             collision.gameObject.GetComponent<Player>().numOLives--;
             Destroy(gameObject);
             collision.gameObject.BroadcastMessage("CheckIfEndOfGame", SendMessageOptions.DontRequireReceiver);

@@ -25,17 +25,21 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     private void Update()
     {
-      if (isPressed)
+        if (GameManager.playGame)
         {
-            if(button.name == "ButtonLeft")
+            if (isPressed)
             {
-                player.BroadcastMessage("MoveLeft", SendMessageOptions.DontRequireReceiver);
+                if (button.name == "ButtonLeft")
+                {
+                    player.BroadcastMessage("MoveLeft", SendMessageOptions.DontRequireReceiver);
+                }
+
+                if (button.name == "ButtonRight")
+                {
+                    player.BroadcastMessage("MoveRight", SendMessageOptions.DontRequireReceiver);
+                }
             }
-            
-            if(button.name == "ButtonRight")
-            {
-                player.BroadcastMessage("MoveRight", SendMessageOptions.DontRequireReceiver);
-            }
+     
 
             
 

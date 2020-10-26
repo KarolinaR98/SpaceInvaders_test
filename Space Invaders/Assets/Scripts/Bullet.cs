@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         velocity.y = speed;
         rb.velocity = velocity;
 
-        if (transform.position.y > 3.5)
+        if (transform.position.y > 3.5 || GameManager.playGame == false)
         {
             Destroy(gameObject);
         }
@@ -37,6 +37,7 @@ public class Bullet : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
             player.GetComponent<Player>().points++;
+            
 
 
         }

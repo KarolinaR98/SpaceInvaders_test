@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public int numOLives;
     [SerializeField]private Text pointsText;
     private float timer;
-    private Vector3 setPlayerPosition = new Vector3 (0, 3.5f, 0);
+    private Vector3 setPlayerPosition = new Vector3 (0, -3.5f, 0);
 
 
     void Start()
@@ -24,7 +24,11 @@ public class Player : MonoBehaviour
     
     void Update()
     {
-        BulletGenerator();
+        if (GameManager.playGame)
+        {
+            BulletGenerator();
+        }
+        
         TextPoints();
         
     }
@@ -67,6 +71,8 @@ public class Player : MonoBehaviour
         if(numOLives == -3)
         {
             Debug.Log("End of game");
+            GameManager.playGame = false;
+            
             
            
                  
@@ -74,6 +80,7 @@ public class Player : MonoBehaviour
         else
         {
             Debug.Log("tada");
+            gameObject.transform.position = setPlayerPosition;
         }
     }
 }

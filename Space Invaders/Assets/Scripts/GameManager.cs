@@ -5,14 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static bool playGame = true;
-    void Start()
-    {
-        
-    }
-
+    public static float shootFrequency = 7;
+    public static float speedOfMovement = 0.8f;
     
-    void Update()
-    {
-        
-    }
+    public static int howManyPlay = 0;
+    public static int[] stats = new int[10];
+    public static int points = 0;
+    
+    
 }

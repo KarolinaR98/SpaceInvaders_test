@@ -37,7 +37,8 @@ public class Bullet : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
             player.GetComponent<Player>().points++;
-            
+            GameManager.shootFrequency -= 0.095f;
+            GameManager.speedOfMovement -= 0.016f;
 
 
         }

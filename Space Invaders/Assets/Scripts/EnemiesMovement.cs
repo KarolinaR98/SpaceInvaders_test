@@ -18,13 +18,13 @@ public class EnemiesMovement : MonoBehaviour
         {
             Movement();
         }
-        
+
     }
 
     void Movement()
     {
         timer += Time.deltaTime;
-        if (timer > timeToMove)
+        if (timer > GameManager.speedOfMovement)
         {
             foreach (Transform enemy in enemies)
             {
@@ -33,7 +33,7 @@ public class EnemiesMovement : MonoBehaviour
                 {                 
                     enemies.transform.Translate(new Vector3(0, -0.5f, 0));
                     step = -step;
-                    timeToMove -= 0.05f;
+                    
                 }
 
              

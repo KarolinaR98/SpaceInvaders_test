@@ -70,16 +70,15 @@ public class Player : MonoBehaviour
     {
         if(numOLives == -3)
         {
-            Debug.Log("End of game");
+            
             GameManager.playGame = false;
-            
-            
+              
            
                  
         }
         else
         {
-            Debug.Log("tada");
+            
             gameObject.transform.position = setPlayerPosition;
         }
     }

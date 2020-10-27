@@ -10,6 +10,7 @@ public class EndOfGameBorder : MonoBehaviour {
     [SerializeField] private Text points;
     [SerializeField] private Text stats;
     private int playerPoints;
+    private int indexOfStat;
 
    
     private void Update()
@@ -26,7 +27,8 @@ public class EndOfGameBorder : MonoBehaviour {
             GameManager.howManyPlay++;
             GameManager.points = playerPoints;
             CheckIfInStats();
-            Debug.Log(GameManager.stats[0]);
+            IfIsInStatistics();
+        
             
         }
         
@@ -40,21 +42,39 @@ public class EndOfGameBorder : MonoBehaviour {
     }
 
     void CheckIfInStats()
+
     {
+
+        int numberToCompare = playerPoints;
+
         for (int i = 0; i < 10; i++)
         {
-            if (playerPoints > GameManager.stats[i])
+            if (numberToCompare > GameManager.stats[i])
             {
-                if(GameManager.stats[i] > GameManager.stats[i + 1])
-                {
-                    GameManager.stats[i + 1] = GameManager.stats[i];
-
-                }
-                GameManager.stats[i] = playerPoints;
+                int x = GameManager.stats[i];
+                GameManager.stats[i] = numberToCompare;
+                numberToCompare = x;
+                GameManager.isInStatistic = true;
                
             }
             
         }
     }
 
+    void IfIsInStatistics()
+    {
+        if (GameManager.isInStatistic)
+        {
+            for(int i = 0; i < 10; i++)
+            {
+                if (playerPoints == GameManager.stats[i])
+                {
+                    indexOfStat = i+1;
+                    break;
+                }
+            }
+        }
+
+        stats.text = "Your score in ranking is at the place: " + indexOfStat; 
+    }
 }

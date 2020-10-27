@@ -11,6 +11,7 @@ public class MenuButtonsNav : MonoBehaviour
         if (levelName == "Game")
         {
             GameManager.playGame = true;
+            GameManager.isInStatistic = false;
         }
         
     }

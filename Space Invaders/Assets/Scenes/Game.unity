@@ -4627,6 +4627,10 @@ PrefabInstance:
       propertyPath: pointsText
       value: 
       objectReference: {fileID: 292428742}
+    - target: {fileID: 703465606, guid: e8a7272a0a9b55c4b8a596d8ebbc67f5, type: 3}
+      propertyPath: speed
+      value: 0.007
+      objectReference: {fileID: 0}
     - target: {fileID: 6934789508451379298, guid: e8a7272a0a9b55c4b8a596d8ebbc67f5,
         type: 3}
       propertyPath: m_LocalPosition.x

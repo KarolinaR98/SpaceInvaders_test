@@ -12,5 +12,7 @@ public class GameManager : MonoBehaviour
     public static int[] stats = new int[10];
     public static int points = 0;
     public static bool isInStatistic =false;
+
     
+
 }
